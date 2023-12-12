@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import SignInScreen from "./src/Screens/SignInScreen";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <LinearGradient
+          colors={['#0d2c5a', '#03284e', '#012442', '#042035', '#081b29']}
+          style={styles.container}>
+
+          <SafeAreaView style={styles.root}>
+              <SignInScreen/>
+          </SafeAreaView>
+
+      </LinearGradient>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+    container: {
+      flex: 1,
+    },
 });
+
+export default App;
