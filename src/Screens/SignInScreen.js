@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Image, useWindowDimensions } from 'react-native'
+import { View, TouchableOpacity, Text, StyleSheet, Image, useWindowDimensions, ScrollView } from 'react-native'
 import CustomInputs from "../Componets/CustomInput/CustomInputs";
 import CustomButtons from "../Componets/CustomButton";
 
@@ -10,12 +10,17 @@ const SignInScreen = () => {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const {height} = useWindowDimensions();
+
     const onSignedInPressed = () => {
         console.log("Signed In!");
     }
 
-    return (
+    const onForgotPasswordPressed = () => {
+        console.log("Forgot Password");
+    }
 
+    return (
+        <ScrollView>
             <View style={styles.content}>
 
                 <Image source={logoImage}
@@ -34,8 +39,9 @@ const SignInScreen = () => {
                     secureTextEntry />
 
                 <CustomButtons text='Sign In' onPress={onSignedInPressed}/>
+                <CustomButtons text='Forgot Password?' onPress={onForgotPasswordPressed} type='TERTIARY' />
             </View>
-
+        </ScrollView>
     );
 }
 
