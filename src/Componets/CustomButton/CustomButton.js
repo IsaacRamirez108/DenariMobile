@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         padding: 18,
-        marginVertical: 5,
+        marginVertical: 7,
         alignItems: 'center',
 
         // borderWidth: 1,
@@ -21,12 +21,18 @@ const styles = StyleSheet.create({
     },
 
     container_PRIMARY: {
-        backgroundColor: 'blue',
-        marginTop: '50%',
+        backgroundColor: '#4b93ec',
+        // backgroundColor: '#3e88d3,
+        // marginTop: '50%',
     },
 
     container_TERTIARY: {
-        overlayColor: 'blue'
+        overlayColor: 'white',
+    },
+
+    container_SECONDARY: {
+        overlayColor: 'white',
+        borderWidth: 1,
     },
 
     text:{
