@@ -2,7 +2,9 @@ import React from 'react';
 import { SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SignInScreen from "./src/Screens/SignInScreen/SignInScreen";
-import CreatAccount from "./src/Screens/CreatAccountScreen";
+import CreatAccount from "./src/Screens/CreatAccountForm";
+import AddressInfo from "./src/Screens/AddressScreen";
+import MultiStepForm from "./src/Screens/MultiStepForm";
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
           <SafeAreaView style={styles.root}>
               {/*<SignInScreen/>*/}
               <CreatAccount/>
+              {/*<AddressInfo/>*/}
+              {/*<MultiStepForm/>*/}
           </SafeAreaView>
 
       </LinearGradient>

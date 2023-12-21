@@ -4,7 +4,7 @@ import logoImage from "../../assets/allWhiteLogoMain.png";
 import CustomInputs from "../../Componets/CustomInput";
 import CustomButtons from "../../Componets/CustomButton";
 
-const CreatAccount = () => {
+const Personal = () => {
 
     const [userName, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -19,15 +19,18 @@ const CreatAccount = () => {
         console.log("Forgot Password");
     }
 
+    const SignInPressed = () => {
+        console.warn("SignInPressed");
+    }
+
     return (
-        <ScrollView>
-            <View style={styles.root}>
-                <View style={styles.container}>
-                    <View style={styles.content}>
+
+
+        <View style={styles.root}>
+            <View style={styles.container}>
+                <ScrollView contentContainerStyle={styles.content}>
+                    <View style={styles.formContainer}>
                         <Text style={styles.title}>Creat Account</Text>
-                        {/*<Image source={logoImage}*/}
-                        {/*       style={[styles.logo, {height: height * 0.3}]}*/}
-                        {/*       resizeMode="contain" />*/}
 
                         <CustomInputs
                             placeHolder={'Username'}
@@ -50,14 +53,21 @@ const CreatAccount = () => {
                             value={passwordRepeat}
                             setValue={setPasswordRepeat}
                             secureTextEntry />
+                    </View>
+                </ScrollView>
 
-                        <View style={styles.buttonContainer}>
-                            <CustomButtons text='Create Account' onPress={onSignedInPressed} type='PRIMARY'/>
-                        </View>
+                <View style={styles.buttonContainer}>
+                    <CustomButtons text='Create Account' onPress={onSignedInPressed} type='PRIMARY'/>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 10 }}>
+                        <Text style={styles.text}>Have an account? </Text>
+                        <TouchableOpacity>
+                            <Text style={styles.link} onPress={SignInPressed} >Sign In</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
+
             </View>
-        </ScrollView>
+        </View>
     );
 };
 
@@ -67,23 +77,41 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+        justifyContent: 'space-between',
     },
     content: {
-        alignItems: 'center', // Center the image horizontally
-        padding: 40, // Adjust top margin for the content
-        marginTop: 20,
+        flexGrow: 1,
+        paddingTop: 40,
     },
-    buttonContainer:{
+    formContainer: {
+        alignItems: 'center',
+        paddingBottom: 100, // Adjust this value to create space for the button
+    },
+    buttonContainer: {
+        position: 'absolute',
+        bottom: 0,
         width: '100%',
-        justifyContent: 'flex-end',
-        marginBottom: 20,
+        alignItems: 'center',
+        paddingHorizontal: 20,
+        paddingBottom: 20, // Padding for the button
+        // You might need to adjust paddingBottom according to your button's height
+        // to ensure it doesn't overlap with content above
     },
     title: {
         fontSize: 34,
         fontWeight: 'bold',
         color: 'white',
         margin: 10,
+        marginVertical: 35,
+
     },
+    text: {
+        color: 'white',
+        marginVertical: 10,
+    },
+    link: {
+        color: '#FDB075',
+    }
 });
 
-export default CreatAccount;
+export default Personal;
