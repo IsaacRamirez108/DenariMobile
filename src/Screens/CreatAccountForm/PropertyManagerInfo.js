@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 
-const RentalData = () => {
+const PropertyManagerInfo = () => {
     return (
         <View style={styles.content}>
-            <Text style={styles.text}>Rental Data</Text>
+            <Text style={styles.text}>Property Management</Text>
         </View>
     );
 };
@@ -18,4 +18,5 @@ const styles = StyleSheet.create({
         color: "white",
     }
 });
-export default RentalData;
+
+export default PropertyManagerInfo;

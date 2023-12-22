@@ -3,8 +3,8 @@ import { SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-n
 import { LinearGradient } from 'expo-linear-gradient';
 import SignInScreen from "./src/Screens/SignInScreen/SignInScreen";
 import CreatAccount from "./src/Screens/CreatAccountForm";
-import AddressInfo from "./src/Screens/AddressScreen";
 import MultiStepForm from "./src/Screens/MultiStepForm";
+import Form from "./src/Screens/CreatAccountForm/Form";
 
 const App = () => {
   return (
@@ -14,10 +14,8 @@ const App = () => {
           style={styles.container}>
 
           <SafeAreaView style={styles.root}>
-              {/*<SignInScreen/>*/}
-              <CreatAccount/>
-              {/*<AddressInfo/>*/}
-              {/*<MultiStepForm/>*/}
+              <Text>Hello World</Text>
+              <Form/>
           </SafeAreaView>
 
       </LinearGradient>
