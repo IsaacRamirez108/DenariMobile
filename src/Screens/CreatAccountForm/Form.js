@@ -115,22 +115,30 @@
 
 
 import React, { useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import {View, Text, Pressable, StyleSheet, TouchableOpacity} from 'react-native';
+import CustomButtons from "../../Componets/CustomButton";
 import Personal from "./Personal";
 import Address from "./Address";
 import PropertyManagerInfo from "./PropertyManagerInfo";
 import RentalData from "./RentalData";
 import CreateUser from "./CreateUser";
 import { Icon } from 'react-native-elements'
+import { faMugSaucer } from '@fortawesome/free-solid-svg-icons/faMugSaucer'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 // Import your form components here
 
 export default function Form() {
+
+    const SignInPressed = () => {
+        console.warn("SignInPressed");
+    }
+
     const [screen, setScreen] = useState(0);
     const FormTitle = [
         "Create Account",
         "Personal Info",
         "Address",
-        "Property Management Info",
+        "Land Lord Info",
         "Rental Data",
     ];
 
@@ -160,27 +168,30 @@ export default function Form() {
         <View style={styles.container}>
             <View style={styles.header}>
                 {screen !== 0 && (
-                    // <Pressable onPress={handlePrev}>
-                        {/*<Text style={styles.prevButton}></Text>*/}
+                    <Pressable onPress={handlePrev}>
                         <Icon
                             name='chevron-left'
                             type='font-awesome'
                             color='white'
-                            size={35}
-                            iconStyle={}
+                            size={30}
                             style={styles.prevButton}
-                            onPress={handlePrev}
                         />
-                    // </Pressable>
+                    </Pressable>
                 )}
-                {/*<Text style={styles.title}>{FormTitle[screen]}</Text>*/}
             </View>
+
+            <Text style={styles.title}>{FormTitle[screen]}</Text>
 
             <View style={styles.content}>{ScreenDisplay()}</View>
 
-            <Pressable style={styles.nextButton} onPress={handleNext}>
-                <Text style={styles.text}>Next</Text>
-            </Pressable>
+            <CustomButtons text='Continue' onPress={handleNext} type='PRIMARY'/>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 10 }}>
+                <Text style={styles.text}>Have an account? </Text>
+                <TouchableOpacity>
+                    <Text style={styles.link} onPress={SignInPressed} >Sign In</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
     );
 }
@@ -188,39 +199,36 @@ export default function Form() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        alignItems: 'center',
+        padding: 15,
     },
     header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        padding: 15,
     },
     title: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
-        // marginLeft: 20,
     },
     prevButton: {
         color: 'white',
-        fontSize: 24,
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    nextButton: {
-        position: 'absolute',
-        bottom: 20,
-        alignSelf: 'center',
-        backgroundColor: 'blue', // Change to your desired color
-        padding: 10,
-        borderRadius: 5,
+        width: '100%',
+        marginVertical: 20,
+        // justifyContent: 'center',
+        // alignItems: 'center',
     },
     text: {
         color: 'white',
     },
+    link: {
+        color: '#FDB075',
+    }
 });
 
 

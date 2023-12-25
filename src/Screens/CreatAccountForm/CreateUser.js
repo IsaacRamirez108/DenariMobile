@@ -25,7 +25,6 @@
 //
 //     return (
 //
-//
 //         <View style={styles.root}>
 //             <View style={styles.container}>
 //                 <ScrollView contentContainerStyle={styles.content}>
@@ -70,7 +69,7 @@
 //         </View>
 //     );
 // };
-//
+
 // const styles = StyleSheet.create({
 //     root: {
 //         flex: 1,
@@ -97,14 +96,6 @@
 //         // You might need to adjust paddingBottom according to your button's height
 //         // to ensure it doesn't overlap with content above
 //     },
-//     title: {
-//         fontSize: 34,
-//         fontWeight: 'bold',
-//         color: 'white',
-//         margin: 10,
-//         marginVertical: 35,
-//
-//     },
 //     text: {
 //         color: 'white',
 //         marginVertical: 10,
@@ -120,26 +111,72 @@
 
 
 
-
-import React from 'react';
-import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import React, {useState} from 'react';
+import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import CustomInputs from "../../Componets/CustomInput";
+import CustomButtons from "../../Componets/CustomButton";
 
 const CreateUser = () => {
+
+    const [userName, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordRepeat, setPasswordRepeat] = useState('');
+
+    const onSignedInPressed = () => {
+        console.log("Signed In!");
+    }
+
+    const onForgotPasswordPressed = () => {
+        console.log("Forgot Password");
+    }
+
+    const SignInPressed = () => {
+        console.warn("SignInPressed");
+    }
+
     return (
+
         <View style={styles.content}>
-            <Text style={styles.text}>CreateUser</Text>
+            <View style={styles.formContainer}>
+                <CustomInputs
+                    placeHolder={'Username'}
+                    value={userName}
+                    setValue={setUsername} />
+
+                <CustomInputs
+                    placeHolder={'Email'}
+                    value={email}
+                    setValue={setEmail} />
+
+                 <CustomInputs
+                     placeHolder={'Password'}
+                     value={password}
+                     setValue={setPassword}
+                     secureTextEntry />
+
+                <CustomInputs
+                    placeHolder={'Repeat Password'}
+                    value={passwordRepeat}
+                    setValue={setPasswordRepeat}
+                    secureTextEntry />
+            </View>
         </View>
+
     );
 };
 
 const styles = StyleSheet.create({
     content: {
-        alignItems: 'center', // Center the image horizontally
-        padding: 30, // Adjust top margin for the content
+        alignItems: 'center',
     },
     text: {
         color: "white",
-    }
+    },
+    formContainer: {
+        width: '100%',
+        alignItems: 'center',
+    },
 });
 
 export default CreateUser;

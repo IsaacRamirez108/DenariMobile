@@ -15,15 +15,11 @@ const styles = StyleSheet.create({
         padding: 18,
         marginVertical: 7,
         alignItems: 'center',
-
-        // borderWidth: 1,
         borderRadius: 30,
     },
 
     container_PRIMARY: {
         backgroundColor: '#4b93ec',
-        // backgroundColor: '#3e88d3,
-        // marginTop: '50%',
     },
 
     container_TERTIARY: {

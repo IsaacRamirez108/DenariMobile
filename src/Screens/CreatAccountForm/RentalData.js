@@ -4,7 +4,7 @@ import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'r
 const RentalData = () => {
     return (
         <View style={styles.content}>
-            <Text style={styles.text}>Rental Data</Text>
+
         </View>
     );
 };

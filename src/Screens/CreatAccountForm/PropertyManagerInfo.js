@@ -4,7 +4,7 @@ import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'r
 const PropertyManagerInfo = () => {
     return (
         <View style={styles.content}>
-            <Text style={styles.text}>Property Management</Text>
+
         </View>
     );
 };
