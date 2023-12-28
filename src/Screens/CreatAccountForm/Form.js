@@ -97,23 +97,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import {View, Text, Pressable, StyleSheet, TouchableOpacity} from 'react-native';
 import CustomButtons from "../../Componets/CustomButton";
@@ -125,7 +108,6 @@ import CreateUser from "./CreateUser";
 import { Icon } from 'react-native-elements'
 import { faMugSaucer } from '@fortawesome/free-solid-svg-icons/faMugSaucer'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-// Import your form components here
 
 export default function Form() {
 
@@ -165,6 +147,7 @@ export default function Form() {
     };
 
     return (
+
         <View style={styles.container}>
             <View style={styles.header}>
                 {screen !== 0 && (
@@ -191,7 +174,6 @@ export default function Form() {
                     <Text style={styles.link} onPress={SignInPressed} >Sign In</Text>
                 </TouchableOpacity>
             </View>
-
         </View>
     );
 }
@@ -220,8 +202,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         marginVertical: 20,
-        // justifyContent: 'center',
-        // alignItems: 'center',
     },
     text: {
         color: 'white',
@@ -230,106 +210,3 @@ const styles = StyleSheet.create({
         color: '#FDB075',
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-// import React, { useState } from 'react';
-// import { View, Text, Pressable, StyleSheet } from 'react-native';
-// // Import your form components here
-//
-// export default function Form() {
-//     const [screen, setScreen] = useState(0);
-//     const FormTitle = [
-//         "Create Account",
-//         "Personal Info",
-//         "Address",
-//         "Property Management Info",
-//         "Rental Data",
-//     ];
-//
-//     const handleNext = () => {
-//         setScreen((currentScreen) => Math.min(currentScreen + 1, FormTitle.length - 1));
-//     };
-//
-//     const handlePrev = () => {
-//         setScreen((currentScreen) => Math.max(currentScreen - 1, 0));
-//     };
-//
-//     const ScreenDisplay = () => {
-//         // Your logic to display different screens based on 'screen' state
-//     };
-//
-//     return (
-//         <View style={styles.container}>
-//             <View style={styles.header}>
-//                 {screen !== 0 && (
-//                     <Pressable style={styles.backButton} onPress={handlePrev}>
-//
-//                     </Pressable>
-//                 )}
-//                 <Text style={styles.title}>{FormTitle[screen]}</Text>
-//             </View>
-//
-//             <View style={styles.content}>{ScreenDisplay()}</View>
-//
-//             <Pressable style={styles.nextButton} onPress={handleNext}>
-//                 <Text style={styles.text}>Next</Text>
-//             </Pressable>
-//         </View>
-//     );
-// }
-//
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         padding: 20,
-//         position: 'relative',
-//     },
-//     header: {
-//         flexDirection: 'row',
-//         alignItems: 'center',
-//         justifyContent: 'flex-start',
-//     },
-//     title: {
-//         color: 'white',
-//         fontSize: 18,
-//         fontWeight: 'bold',
-//         marginLeft: 20,
-//     },
-//     backButton: {
-//         position: 'absolute',
-//         top: 20,
-//         left: 20,
-//     },
-//     content: {
-//         flex: 1,
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//     },
-//     nextButton: {
-//         position: 'absolute',
-//         bottom: 20,
-//         alignSelf: 'center',
-//         backgroundColor: 'blue', // Change to your desired color
-//         padding: 10,
-//         borderRadius: 5,
-//     },
-//     text: {
-//         color: 'white',
-//     },
-// });
