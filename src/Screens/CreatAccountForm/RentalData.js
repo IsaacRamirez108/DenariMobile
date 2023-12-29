@@ -19,9 +19,7 @@ const RentalData = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomDatePicker
-                    placeholder={'Move In Date'}
-                />
+                <CustomDatePicker placeHolder={'Move in date'}/>
 
             </View>
         </View>
@@ -30,10 +28,13 @@ const RentalData = () => {
 
 const styles = StyleSheet.create({
     content: {
-        alignItems: 'center', // Center the image horizontally
+        alignItems: 'center',
+        width: '100%',
     },
     formContainer: {
         width: '100%',
+        marginVertical: '50%',
+        // backgroundColor: 'blue'
     },
     text: {
         color: "white",

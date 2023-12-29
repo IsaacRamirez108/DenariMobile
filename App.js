@@ -14,7 +14,6 @@ const App = () => {
           style={styles.container}>
 
           <SafeAreaView style={styles.root}>
-              <Text>Hello World</Text>
               <Form/>
           </SafeAreaView>
 

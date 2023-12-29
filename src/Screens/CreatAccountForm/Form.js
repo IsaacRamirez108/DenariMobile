@@ -120,8 +120,8 @@ export default function Form() {
         "Create Account",
         "Personal Info",
         "Address",
-        "Land Lord Info",
         "Rental Data",
+        "Land Lord Info"
     ];
 
     const handleNext = () => {
