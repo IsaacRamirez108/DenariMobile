@@ -4,6 +4,7 @@ import CustomInputs from "../../Componets/CustomInput";
 import DatePicker from 'react-native-datepicker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import CustomDatePicker from "../../Componets/CustomDatePicker";
+import CustomDropDown from "../../Componets/CustomDropDown";
 
 
 const RentalData = () => {
@@ -19,25 +20,27 @@ const RentalData = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomInputs
-                    placeHolder={'monthlyRent'}
-                    value={monthlyRent}
-                    setValue={setMonthlyRent}
-                />
-                <CustomInputs
-                    placeHolder={'rentalPortal'}
-                    value={rentalPortal}
-                    setValue={setRentalPortal}
-                />
+                {/*<CustomInputs*/}
+                {/*    placeHolder={'monthlyRent'}*/}
+                {/*    value={monthlyRent}*/}
+                {/*    setValue={setMonthlyRent}*/}
+                {/*/>*/}
+                {/*<CustomInputs*/}
+                {/*    placeHolder={'rentalPortal'}*/}
+                {/*    value={rentalPortal}*/}
+                {/*    setValue={setRentalPortal}*/}
+                {/*/>*/}
 
-                <View style={styles.rowContainer}>
-                    <View style={styles.halfWidthInput}>
-                        <CustomDatePicker placeHolder={'Move In Date'}/>
-                    </View>
-                    <View style={styles.halfWidthInput}>
-                        <CustomDatePicker placeHolder={'Move Out Date'}/>
-                    </View>
-                </View>
+                {/*<View style={styles.rowContainer}>*/}
+                {/*    <View style={styles.halfWidthInput}>*/}
+                {/*        <CustomDatePicker placeHolder={'Move In Date'}/>*/}
+                {/*    </View>*/}
+                {/*    <View style={styles.halfWidthInput}>*/}
+                {/*        <CustomDatePicker placeHolder={'Move Out Date'}/>*/}
+                {/*    </View>*/}
+                {/*</View>*/}
+
+                {/*<CustomDropDown />*/}
 
             </View>
         </View>

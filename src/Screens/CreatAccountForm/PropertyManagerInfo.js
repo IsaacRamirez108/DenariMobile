@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import CustomInputs from "../../Componets/CustomInput";
+import CustomDropDown from "../../Componets/CustomDropDown";
 
 const PropertyManagerInfo = () => {
 
@@ -13,25 +14,8 @@ const PropertyManagerInfo = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomInputs
+                <CustomDropDown
                     placeHolder={'Individual Or Company'}
-                    value={Individual_Company}
-                    setValue={setIndividual_Company}
-                />
-                <CustomInputs
-                    placeHolder={'Name'}
-                    value={name}
-                    setValue={setName}
-                />
-                <CustomInputs
-                    placeHolder={'Contact'}
-                    value={contact}
-                    setValue={setContact}
-                />
-                <CustomInputs
-                    placeHolder={'company Email'}
-                    value={companyEmail}
-                    setValue={setCompanyEmail}
                 />
 
             </View>
