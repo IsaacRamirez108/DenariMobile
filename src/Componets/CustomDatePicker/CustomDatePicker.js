@@ -12,17 +12,24 @@ import React, { useState } from "react";
 import DatePicker from "react-native-modern-datepicker";
 import { getFormatedDate } from "react-native-modern-datepicker";
 
-export default function CustomDatePicker() {
+export default function CustomDatePicker({ placeHolder }) {
+
+    // State to manage the visibility of the date picker modal and selected date
     const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
     const [selectedStartDate, setSelectedStartDate] = useState('');
-    const today = new Date();
-    const startDate = getFormatedDate(today.setDate(today.getDate() + 1), 'YYYY/MM/DD');
 
+    const today = new Date();
+
+    // Set the start date to 365 days (1 year) ago
+    const startDate = getFormatedDate(today.setDate(today.getDate() - 365), 'MM/DD/YYYY');
+
+    // Function to handle the selection of a date
     const handleChangeStartDate = (date) => {
         setSelectedStartDate(date);
         setOpenStartDatePicker(false); // Close the date picker after selection
     };
 
+    // Function to toggle the visibility of the date picker modal
     const handleOnPressStartDate = () => {
         setOpenStartDatePicker(!openStartDatePicker);
     };
@@ -33,13 +40,12 @@ export default function CustomDatePicker() {
                 behavior={Platform.OS === 'ios' ? 'padding' : ''}
                 style={{
                     width: '100%',
-                    height: '100%',
                 }} >
 
                 <View style={styles.containerTwo}>
                     <View>
                         <TouchableOpacity style={styles.inputBtn} onPress={handleOnPressStartDate}>
-                            <Text style={styles.text}>{selectedStartDate || 'Move In Date'}</Text>
+                            <Text style={styles.text}>{selectedStartDate || placeHolder}</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

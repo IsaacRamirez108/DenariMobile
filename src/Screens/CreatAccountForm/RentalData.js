@@ -19,7 +19,8 @@ const RentalData = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomDatePicker placeHolder={'Move in date'}/>
+                <CustomDatePicker placeHolder={'Move In Date'}/>
+                <CustomDatePicker placeHolder={'Move Out Date'}/>
 
             </View>
         </View>
