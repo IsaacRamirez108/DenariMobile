@@ -42,7 +42,7 @@ export default function CustomDatePicker({ placeHolder }) {
                     width: '100%',
                 }} >
 
-                <View style={styles.containerTwo}>
+                <View style={styles.content}>
                     <View>
                         <TouchableOpacity style={styles.inputBtn} onPress={handleOnPressStartDate}>
                             <Text style={styles.text}>{selectedStartDate || placeHolder}</Text>
@@ -53,8 +53,8 @@ export default function CustomDatePicker({ placeHolder }) {
                 <Modal
                     animationType='slide'
                     transparent={true}
-                    visible={openStartDatePicker}
-                >
+                    visible={openStartDatePicker}>
+
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
                             <DatePicker
@@ -85,9 +85,9 @@ export default function CustomDatePicker({ placeHolder }) {
 }
 
 const styles = StyleSheet.create({
-    containerTwo:{
+    content:{
         width: "100%",
-        paddingHorizontal: 15,
+        paddingHorizontal: 3,
     },
     inputBtn: {
         color: '#fff',

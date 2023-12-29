@@ -19,8 +19,25 @@ const RentalData = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomDatePicker placeHolder={'Move In Date'}/>
-                <CustomDatePicker placeHolder={'Move Out Date'}/>
+                <CustomInputs
+                    placeHolder={'monthlyRent'}
+                    value={monthlyRent}
+                    setValue={setMonthlyRent}
+                />
+                <CustomInputs
+                    placeHolder={'rentalPortal'}
+                    value={rentalPortal}
+                    setValue={setRentalPortal}
+                />
+
+                <View style={styles.rowContainer}>
+                    <View style={styles.halfWidthInput}>
+                        <CustomDatePicker placeHolder={'Move In Date'}/>
+                    </View>
+                    <View style={styles.halfWidthInput}>
+                        <CustomDatePicker placeHolder={'Move Out Date'}/>
+                    </View>
+                </View>
 
             </View>
         </View>
@@ -34,8 +51,13 @@ const styles = StyleSheet.create({
     },
     formContainer: {
         width: '100%',
-        marginVertical: '50%',
         // backgroundColor: 'blue'
+    },
+    rowContainer: {
+        flexDirection: 'row',
+    },
+    halfWidthInput: {
+        width: '50%',
     },
     text: {
         color: "white",

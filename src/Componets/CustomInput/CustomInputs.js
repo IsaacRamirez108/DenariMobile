@@ -19,7 +19,7 @@ const CustomInputs = ({value, setValue, placeHolder, secureTextEntry}) => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingHorizontal: 15, // Add padding to match screen padding if needed
+        paddingHorizontal: 3, // Add padding to match screen padding if needed
     },
     input:{
         color: '#fff',

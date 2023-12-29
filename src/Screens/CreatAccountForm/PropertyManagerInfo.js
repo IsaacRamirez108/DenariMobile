@@ -13,26 +13,26 @@ const PropertyManagerInfo = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Individual Or Company'}*/}
-                {/*    value={Individual_Company}*/}
-                {/*    setValue={setIndividual_Company}*/}
-                {/*/>*/}
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Name'}*/}
-                {/*    value={name}*/}
-                {/*    setValue={setName}*/}
-                {/*/>*/}
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Contact'}*/}
-                {/*    value={contact}*/}
-                {/*    setValue={setContact}*/}
-                {/*/>*/}
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'company Email'}*/}
-                {/*    value={companyEmail}*/}
-                {/*    setValue={setCompanyEmail}*/}
-                {/*/>*/}
+                <CustomInputs
+                    placeHolder={'Individual Or Company'}
+                    value={Individual_Company}
+                    setValue={setIndividual_Company}
+                />
+                <CustomInputs
+                    placeHolder={'Name'}
+                    value={name}
+                    setValue={setName}
+                />
+                <CustomInputs
+                    placeHolder={'Contact'}
+                    value={contact}
+                    setValue={setContact}
+                />
+                <CustomInputs
+                    placeHolder={'company Email'}
+                    value={companyEmail}
+                    setValue={setCompanyEmail}
+                />
 
             </View>
         </View>
@@ -41,12 +41,15 @@ const PropertyManagerInfo = () => {
 
 const styles = StyleSheet.create({
     content: {
-        alignItems: 'center', // Center the image horizontally
-        padding: 30, // Adjust top margin for the content
+        alignItems: 'center',
+        width: '100%',
+    },
+    formContainer: {
+        width: '100%',
     },
     text: {
         color: "white",
-    }
+    },
 });
 
 export default PropertyManagerInfo;
