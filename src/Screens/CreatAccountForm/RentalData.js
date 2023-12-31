@@ -15,6 +15,14 @@ const RentalData = () => {
     const [rentalPortal, setRentalPortal] = useState('');
     const [formPayment, setFormPayment] = useState('');
 
+    const [selectedItem, setSelectedItem] = useState('');
+
+    const data = [
+        { key: '1', value: '' },
+        { key: '2', value: 'Appliances' },
+        { key: '3', value: 'Cameras' },
+        // Add more data as needed
+    ];
 
     return (
         <View style={styles.content}>

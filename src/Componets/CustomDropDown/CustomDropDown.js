@@ -2,30 +2,22 @@ import { SelectList } from 'react-native-dropdown-select-list'
 import {useState} from "react";
 import {StyleSheet, View} from "react-native";
 
-const CustomDropDown = ({placeHolder}) => {
+const CustomDropDown = ({ placeHolder, data, setSelected }) => {
 
     const [select, setSelected] = useState("");
 
-    const data = [
-        {key:'1', value:'Mobiles'},
-        {key:'2', value:'Appliances'},
-        {key:'3', value:'Cameras'},
-        {key:'4', value:'Computers'},
-        {key:'5', value:'Vegetables'},
-        {key:'6', value:'Diary Products'},
-        {key:'7', value:'Drinks'},
-    ]
-
     return(
         <View style={styles.content}>
+
             <SelectList
-                setSelected={(val) => setSelected(val)}
+                setSelected={setSelected}
                 data={data}
                 save="value"
                 placeholder={placeHolder}
                 dropdownTextStyles={styles.text}
-                boxStyles={styles.boxStyles}
+                boxStyles={styles.input}
             />
+
         </View>
 
     )
@@ -39,7 +31,7 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
     },
-    boxStyles: {
+    input: {
         color: 'white',
         backgroundColor: '#1d2738',
         height: 55,
