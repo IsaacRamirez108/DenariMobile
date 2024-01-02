@@ -38,7 +38,12 @@ const styles = StyleSheet.create({
         marginVertical: 7,
         borderWidth: 0,
         paddingHorizontal: 30
-    }
+    },
+    placeholder: {
+        color: 'white',
+        marginTop: 5,
+        paddingLeft: 20,
+    },
 });
 
 export default CustomDropDown;

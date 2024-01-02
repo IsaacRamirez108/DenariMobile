@@ -21,12 +21,10 @@ const RentalData = () => {
 
     const [selectedValue, setSelectedValue] = useState(null);
     const items = [
-        { label: '1', value: 'Individual' },
-        { label:  '2', value: 'Company' },
+        { label: 'Portal', value: '1' },
+        { label: 'Check Form', value: '2' },
+        { label: 'Cash', value: '3' },
     ];
-
-    // const [value, setValue] = React.useState(2310.458);
-
 
     return (
         <View style={styles.content}>

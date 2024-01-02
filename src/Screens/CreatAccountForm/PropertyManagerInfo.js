@@ -21,18 +21,6 @@ const PropertyManagerInfo = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                {/*<SelectList*/}
-                {/*    setSelected={setSelectedItem}*/}
-                {/*    data={data}*/}
-                {/*    save="value"*/}
-                {/*    placeholder={'Individual Or Company'}*/}
-                {/*    dropdownTextStyles={styles.text}*/}
-                {/*    boxStyles={styles.input}*/}
-                {/*    placeholderStyle={{*/}
-                {/*        color: "white",*/}
-                {/*    }}*/}
-                {/*/>*/}
-
                 <CustomDropDown
                     placeholder="Individual or Company?"
                     items={items}
