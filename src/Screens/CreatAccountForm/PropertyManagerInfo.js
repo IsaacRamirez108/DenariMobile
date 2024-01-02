@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import CustomInputs from "../../Componets/CustomInput";
 import CustomDropDown from "../../Componets/CustomDropDown";
+import {SelectList} from "react-native-dropdown-select-list";
 
 const PropertyManagerInfo = () => {
 
@@ -10,12 +11,32 @@ const PropertyManagerInfo = () => {
     const [contact, setContact] = useState('');
     const [companyEmail, setCompanyEmail] = useState('');
 
+    const [selectedValue, setSelectedValue] = useState(null);
+    const items = [
+        { label: 'Individual', value: '1' },
+        { label:  'Company', value: '2' },
+    ];
+
     return (
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
+                {/*<SelectList*/}
+                {/*    setSelected={setSelectedItem}*/}
+                {/*    data={data}*/}
+                {/*    save="value"*/}
+                {/*    placeholder={'Individual Or Company'}*/}
+                {/*    dropdownTextStyles={styles.text}*/}
+                {/*    boxStyles={styles.input}*/}
+                {/*    placeholderStyle={{*/}
+                {/*        color: "white",*/}
+                {/*    }}*/}
+                {/*/>*/}
+
                 <CustomDropDown
-                    placeHolder={'Individual Or Company'}
+                    placeholder="Individual or Company?"
+                    items={items}
+                    onValueChange={(value) => setSelectedValue(value)}
                 />
 
             </View>

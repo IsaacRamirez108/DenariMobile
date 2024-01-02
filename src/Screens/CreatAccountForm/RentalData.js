@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import {View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image, TextInput} from 'react-native';
 import CustomInputs from "../../Componets/CustomInput";
 import DatePicker from 'react-native-datepicker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import {AmountInput} from 'react-native-amount-input';
 import CustomDatePicker from "../../Componets/CustomDatePicker";
 import CustomDropDown from "../../Componets/CustomDropDown";
+import {Input} from "react-native-elements";
+import CustomMaskedInput from "../../Componets/CustomMaskedInput/CustomMaskedInput";
 
 
 const RentalData = () => {
@@ -15,40 +18,22 @@ const RentalData = () => {
     const [rentalPortal, setRentalPortal] = useState('');
     const [formPayment, setFormPayment] = useState('');
 
-    const [selectedItem, setSelectedItem] = useState('');
-
-    const data = [
-        { key: '1', value: '' },
-        { key: '2', value: 'Appliances' },
-        { key: '3', value: 'Cameras' },
-        // Add more data as needed
+    const [selectedValue, setSelectedValue] = useState(null);
+    const items = [
+        { label: '1', value: 'Individual' },
+        { label:  '2', value: 'Company' },
     ];
+
+    // const [value, setValue] = React.useState(2310.458);
+
 
     return (
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'monthlyRent'}*/}
-                {/*    value={monthlyRent}*/}
-                {/*    setValue={setMonthlyRent}*/}
-                {/*/>*/}
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'rentalPortal'}*/}
-                {/*    value={rentalPortal}*/}
-                {/*    setValue={setRentalPortal}*/}
-                {/*/>*/}
+                <CustomMaskedInput
 
-                {/*<View style={styles.rowContainer}>*/}
-                {/*    <View style={styles.halfWidthInput}>*/}
-                {/*        <CustomDatePicker placeHolder={'Move In Date'}/>*/}
-                {/*    </View>*/}
-                {/*    <View style={styles.halfWidthInput}>*/}
-                {/*        <CustomDatePicker placeHolder={'Move Out Date'}/>*/}
-                {/*    </View>*/}
-                {/*</View>*/}
-
-                {/*<CustomDropDown />*/}
+                />
 
             </View>
         </View>
@@ -72,6 +57,14 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white",
+    },
+    input:{
+        color: '#fff',
+        backgroundColor: '#1d2738',
+        height: 55,
+        borderRadius: 30,
+        paddingHorizontal: 25,
+        marginVertical: 7,
     },
 });
 export default RentalData;

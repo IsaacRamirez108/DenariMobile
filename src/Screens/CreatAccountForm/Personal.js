@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import CustomInputs from "../../Componets/CustomInput";
 import CustomButtons from "../../Componets/CustomButton";
-
+import {MaskedTextInput} from "react-native-mask-text";
 
 const Personal = () => {
 
@@ -13,21 +13,32 @@ const Personal = () => {
     return (
         <View style={styles.content}>
             <View style={styles.formContainer}>
-                <CustomInputs
-                    placeHolder={'Social Security Number'}
-                    value={SSN}
-                    setValue={setSSN} />
+                {/*<CustomInputs*/}
+                {/*    placeHolder={'Social Security Number'}*/}
+                {/*    value={SSN}*/}
+                {/*    setValue={setSSN} />*/}
 
-                <CustomInputs
-                    placeHolder={'Date of Birth'}
-                    value={DOB}
-                    setValue={setDOB} />
+                <Text style={styles.placeholder}>Enter Phone Number</Text>
+                <MaskedTextInput
+                    mask="(999)-999-9999"
+                    onChangeText={(text, rawText) => {
+                        console.log(text);
+                        console.log(rawText);
+                    }}
+                    style={styles.maskedInput}
+                    keyboardType="numeric"
+                />
 
-                <CustomInputs
-                    placeHolder={'Phone Number'}
-                    value={phoneNumber}
-                    setValue={setPhoneNumber}
-                    secureTextEntry />
+                {/*<CustomInputs*/}
+                {/*    placeHolder={'Date of Birth'}*/}
+                {/*    value={DOB}*/}
+                {/*    setValue={setDOB} />*/}
+
+                {/*<CustomInputs*/}
+                {/*    placeHolder={'Phone Number'}*/}
+                {/*    value={phoneNumber}*/}
+                {/*    setValue={setPhoneNumber}*/}
+                {/*    secureTextEntry />*/}
             </View>
         </View>
     );
@@ -43,6 +54,15 @@ const styles = StyleSheet.create({
     formContainer: {
         width: '100%',
         alignItems: 'center',
+    },
+    maskedInput: {
+        width: '100%',
+        color: '#fff',
+        backgroundColor: '#1d2738',
+        height: 55,
+        borderRadius: 30,
+        paddingHorizontal: 25,
+        marginVertical: 7,
     },
 });
 
