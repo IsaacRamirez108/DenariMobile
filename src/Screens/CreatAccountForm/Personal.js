@@ -23,7 +23,7 @@ const Personal = () => {
 
                 <CustomDatePicker
                     placeHolder={'Date of Birth'}
-                    mask={'MM/DD/YYYY'}
+                    // mask={'MM/DD/YYYY'}
                 />
                 <CustomMaskedInput
                     placeHolder={'Phone Number'}
