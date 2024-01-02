@@ -45,7 +45,7 @@ const RentalData = () => {
                 />
 
                 <CustomDropDown
-                    placeholder="Individual or Company?"
+                    placeholder="Form of Payment"
                     items={items}
                     onValueChange={(value) => setSelectedValue(value)}
                 />

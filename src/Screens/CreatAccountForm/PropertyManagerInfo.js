@@ -3,13 +3,14 @@ import { View, SafeAreaView, TouchableOpacity, Text, StyleSheet, Image } from 'r
 import CustomInputs from "../../Componets/CustomInput";
 import CustomDropDown from "../../Componets/CustomDropDown";
 import {SelectList} from "react-native-dropdown-select-list";
+import CustomMaskedInput from "../../Componets/CustomMaskedInput/CustomMaskedInput";
 
 const PropertyManagerInfo = () => {
 
     const [Individual_Company, setIndividual_Company] = useState('');
     const [name, setName] = useState('');
     const [contact, setContact] = useState('');
-    const [companyEmail, setCompanyEmail] = useState('');
+    const [propertyManagerEmail, setPropertyManagerEmail] = useState('');
 
     const [selectedValue, setSelectedValue] = useState(null);
     const items = [
@@ -25,6 +26,27 @@ const PropertyManagerInfo = () => {
                     placeholder="Individual or Company?"
                     items={items}
                     onValueChange={(value) => setSelectedValue(value)}
+                    value={Individual_Company}
+                    setValue={setIndividual_Company}
+                />
+
+                <CustomInputs
+                    placeHolder={'Property Manager Name'}
+                    value={name}
+                    setValue={setName}
+                />
+
+                <CustomMaskedInput
+                    placeHolder={'Property Manager Number'}
+                    mask={'(999)999-9999'}
+                    value={contact}
+                    setValue={setContact}
+                />
+
+                <CustomInputs
+                    placeHolder={'Property Manager Email'}
+                    value={propertyManagerEmail}
+                    setValue={setPropertyManagerEmail}
                 />
 
             </View>
