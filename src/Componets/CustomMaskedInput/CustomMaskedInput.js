@@ -4,7 +4,7 @@ import { MaskedTextInput } from "react-native-mask-text";
 
 function CustomMaskedInput({placeHolder, mask}) {
     return (
-        <View>
+        <View style={styles.content}>
 
             <Text style={styles.placeholder}>{placeHolder}</Text>
             <MaskedTextInput
@@ -22,6 +22,10 @@ function CustomMaskedInput({placeHolder, mask}) {
 }
 
 const styles = StyleSheet.create({
+    content:{
+        width: "100%",
+        paddingHorizontal: 3,
+    },
     input: {
         color: '#fff',
         backgroundColor: '#1d2738',

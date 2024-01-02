@@ -21,9 +21,9 @@ const Personal = () => {
                     mask={'999-99-9999'}
                 />
 
-                <CustomDatePicker
+                <CustomMaskedInput
                     placeHolder={'Date of Birth'}
-                    // mask={'MM/DD/YYYY'}
+                    mask={'99/99/9999'}
                 />
                 <CustomMaskedInput
                     placeHolder={'Phone Number'}
@@ -38,6 +38,7 @@ const Personal = () => {
 const styles = StyleSheet.create({
     content: {
         alignItems: 'center',
+        width: '100%'
     },
     text: {
         color: "white",

@@ -36,6 +36,22 @@ const RentalData = () => {
                     placeHolder={'Monthly Rent'}
                 />
 
+                <CustomMaskedInput
+                    placeHolder={'Move In Date'}
+                    mask={'99/99/9999'}
+                />
+
+                <CustomMaskedInput
+                    placeHolder={'Move Out Date'}
+                    mask={'99/99/9999'}
+                />
+
+                <CustomDropDown
+                    placeholder="Individual or Company?"
+                    items={items}
+                    onValueChange={(value) => setSelectedValue(value)}
+                />
+
             </View>
         </View>
     );

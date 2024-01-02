@@ -35,7 +35,7 @@ export default function CustomDatePicker({ placeHolder }) {
     };
 
     return (
-        <SafeAreaView>
+        <View>
             <KeyboardAvoidingView
                 behavior={Platform.OS === 'ios' ? 'padding' : ''}
                 style={{
@@ -43,11 +43,9 @@ export default function CustomDatePicker({ placeHolder }) {
                 }} >
 
                 <View style={styles.content}>
-                    <View>
-                        <TouchableOpacity style={styles.inputBtn} onPress={handleOnPressStartDate}>
-                            <Text style={styles.text}>{selectedStartDate || placeHolder}</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity style={styles.inputBtn} onPress={handleOnPressStartDate}>
+                        <Text style={styles.text}>{selectedStartDate || placeHolder}</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <Modal
@@ -80,7 +78,7 @@ export default function CustomDatePicker({ placeHolder }) {
                     </View>
                 </Modal>
             </KeyboardAvoidingView>
-        </SafeAreaView>
+        </View>
     );
 }
 
@@ -90,6 +88,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 3,
     },
     inputBtn: {
+        width: "100%",
         color: '#fff',
         backgroundColor: '#1d2738',
         height: 55,
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 20,
-        padding: 35,
+        padding: 20,
         width: "90%",
         shadowColor: "#000",
         shadowOffset: {
