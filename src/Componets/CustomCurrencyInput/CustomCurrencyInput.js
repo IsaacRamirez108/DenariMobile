@@ -1,14 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, Text} from "react-native";
+import {ScrollView, StyleSheet, Text} from "react-native";
 import { MaskedTextInput } from "react-native-mask-text";
 
-function CustomMaskedInput({placeHolder, mask}) {
+function CustomCurrencyInput({placeHolder, mask}) {
     return (
-        <View>
+        <ScrollView>
 
             <Text style={styles.placeholder}>{placeHolder}</Text>
             <MaskedTextInput
-                mask={mask}
+                type="currency"
+                options={{
+                    prefix: '$',
+                    decimalSeparator: '.',
+                    groupSeparator: ',',
+                    precision: 2
+                }}
                 onChangeText={(text, rawText) => {
                     console.log(text);
                     console.log(rawText);
@@ -17,7 +23,7 @@ function CustomMaskedInput({placeHolder, mask}) {
                 keyboardType="numeric"
             />
 
-        </View>
+        </ScrollView>
     );
 }
 
@@ -38,4 +44,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CustomMaskedInput;
+export default CustomCurrencyInput;

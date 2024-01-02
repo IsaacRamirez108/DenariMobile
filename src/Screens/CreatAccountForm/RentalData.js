@@ -8,6 +8,7 @@ import CustomDatePicker from "../../Componets/CustomDatePicker";
 import CustomDropDown from "../../Componets/CustomDropDown";
 import {Input} from "react-native-elements";
 import CustomMaskedInput from "../../Componets/CustomMaskedInput/CustomMaskedInput";
+import CustomCurrencyInput from "../../Componets/CustomCurrencyInput/CustomCurrencyInput";
 
 
 const RentalData = () => {
@@ -31,8 +32,8 @@ const RentalData = () => {
         <View style={styles.content}>
             <View style={styles.formContainer}>
 
-                <CustomMaskedInput
-
+                <CustomCurrencyInput
+                    placeHolder={'Monthly Rent'}
                 />
 
             </View>
@@ -57,14 +58,6 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white",
-    },
-    input:{
-        color: '#fff',
-        backgroundColor: '#1d2738',
-        height: 55,
-        borderRadius: 30,
-        paddingHorizontal: 25,
-        marginVertical: 7,
     },
 });
 export default RentalData;

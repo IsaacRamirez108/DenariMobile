@@ -3,6 +3,8 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import CustomInputs from "../../Componets/CustomInput";
 import CustomButtons from "../../Componets/CustomButton";
 import {MaskedTextInput} from "react-native-mask-text";
+import CustomMaskedInput from "../../Componets/CustomMaskedInput/CustomMaskedInput";
+import CustomDatePicker from "../../Componets/CustomDatePicker";
 
 const Personal = () => {
 
@@ -13,32 +15,21 @@ const Personal = () => {
     return (
         <View style={styles.content}>
             <View style={styles.formContainer}>
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Social Security Number'}*/}
-                {/*    value={SSN}*/}
-                {/*    setValue={setSSN} />*/}
 
-                <Text style={styles.placeholder}>Enter Phone Number</Text>
-                <MaskedTextInput
-                    mask="(999)-999-9999"
-                    onChangeText={(text, rawText) => {
-                        console.log(text);
-                        console.log(rawText);
-                    }}
-                    style={styles.maskedInput}
-                    keyboardType="numeric"
+                <CustomMaskedInput
+                    placeHolder={'Social Security Number'}
+                    mask={'999-99-9999'}
                 />
 
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Date of Birth'}*/}
-                {/*    value={DOB}*/}
-                {/*    setValue={setDOB} />*/}
+                <CustomDatePicker
+                    placeHolder={'Date of Birth'}
+                    mask={'MM/DD/YYYY'}
+                />
+                <CustomMaskedInput
+                    placeHolder={'Phone Number'}
+                    mask={'(999)999-9999'}
+                />
 
-                {/*<CustomInputs*/}
-                {/*    placeHolder={'Phone Number'}*/}
-                {/*    value={phoneNumber}*/}
-                {/*    setValue={setPhoneNumber}*/}
-                {/*    secureTextEntry />*/}
             </View>
         </View>
     );
