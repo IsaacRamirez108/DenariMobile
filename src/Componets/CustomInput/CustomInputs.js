@@ -21,7 +21,7 @@ const CustomInputs = ({ value, setValue, placeHolder, secureTextEntry }) => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingHorizontal: 10,
+        paddingHorizontal: 3,
     },
     input: {
         color: '#fff',
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         marginVertical: 7,
     },
     placeholder: {
-        // fontSize: 16,
         color: 'white',
         marginTop: 5,
         paddingLeft: 20,
